@@ -1,4 +1,4 @@
-﻿# StoreLib
+# StoreLib
 
 标签（空格分隔）： LocalStorage SessionStorage 
 

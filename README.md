@@ -1,6 +1,6 @@
 # StoreLib
 
-标签（空格分隔）： LocalStorage SessionStorage 
+标签： LocalStorage SessionStorage 
 
 ---
 

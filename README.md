@@ -49,7 +49,7 @@ sessionStore----> SessionStorage
 #####例子：
 
     localStore.update("username", function (key, data) {
-        return data + "chen";
+        return data + "chen";//需自己确保data不为null
     });
     
 

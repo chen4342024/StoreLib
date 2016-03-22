@@ -163,4 +163,19 @@ describe("Store specs", function () {
         localStore.set(key3, strValue);
         expect(localStore.getKeyStartBy("test1")).toEqual([key1,key2]);
     });
+
+    it("should calu size success", function () {
+        var key1 = "test1";
+        var key2 = "test2";
+        var key3 = "test3";
+        var strValue = "test";
+        localStore.set(key1, strValue);
+        localStore.set(key2, strValue);
+        localStore.set(key3, strValue);
+        //由于有前缀，故每个+6 e_str_test
+        expect(localStore.size([key1,key2,key3])).toEqual("30.00 B");
+        expect(localStore.size([key1,key2,key3],"KB")).toEqual("0.03 KB");
+        localStore.clear();
+        expect(localStore.size([key1,key2,key3])).toEqual("0 B");
+    });
 });

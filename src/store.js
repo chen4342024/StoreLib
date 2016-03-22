@@ -151,7 +151,7 @@
         var i = sizes.indexOf(size);
         if (bytes === 0) {
             i = (i == -1) ? 0 : i;
-            return '0' + sizes[i];
+            return '0' + ' ' + sizes[i];
         }
         if (i == -1) {
             i = Math.floor(Math.log(bytes) / Math.log(k));
@@ -413,11 +413,12 @@
          */
         size: function (keys, sizeType) {
             var totalByte = 0;
+            var self = this;
             _.each(keys, function (key) {
-                var value = this.getString(key);
+                var value = self.getString(key) || "";
                 totalByte += _.sizeof(value);
             });
-            return bytesToSize(totalByte, sizeType);
+            return _.bytesToSize(totalByte, sizeType);
         },
 
 
@@ -443,7 +444,7 @@
 
     function checkEnable(proxy, proxyName) {
         if (proxy) {
-            alert('This browser supports ' + proxyName);
+            console.log('This browser supports ' + proxyName);
         } else {
             alert('This browser does NOT support ' + proxyName);
         }

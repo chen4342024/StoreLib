@@ -441,6 +441,17 @@
         }
     };
 
+    function checkEnable(proxy, proxyName) {
+        if (proxy) {
+            alert('This browser supports ' + proxyName);
+        } else {
+            alert('This browser does NOT support ' + proxyName);
+        }
+    }
+
+    checkEnable(window.localStorage, "localStorage");
+    checkEnable(window.sessionStorage, "sessionStorage");
+
     window.sessionStore = new Store(window.sessionStorage);
     window.localStore = new Store(window.localStorage);
     window.Store = Store;
